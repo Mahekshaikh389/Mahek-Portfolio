@@ -2,6 +2,8 @@
 import { Typewriter } from "react-simple-typewriter";
 import { FaDownload, FaGithub, FaLinkedin, FaArrowDown } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import Mahekimage from '../assets/Mahek-photo.jpg';
+
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -342,7 +344,7 @@ export default function Home() {
             {/* Profile Image */}
             <div className="profile-glow w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 xl:w-[400px] xl:h-[400px] rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-sm transition-all duration-500 relative">
               <img
-                src="./src/assets/Mahek-photo.jpg"
+                src={Mahekimage}
                 alt="Mahek Shaikh"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
               />
