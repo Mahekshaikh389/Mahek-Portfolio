@@ -220,7 +220,7 @@ export default function Home() {
         `
       }} />
       
-      <div id="home" className="relative  flex flex-col lg:flex-row justify-between items-center px-4 sm:px-8 md:px-16 lg:px-20 xl:px-40 2xl:px-60 py-8  mt-10lg:py-0 overflow-hidden">
+      <div id="home" className="relative pt-20 flex flex-col lg:flex-row justify-between items-center px-4 sm:px-8 md:px-16 lg:px-20 xl:px-40 2xl:px-60 py-8  mt-10lg:py-0 overflow-hidden">
         
         {/* Dynamic Background Elements */}
         <div 
