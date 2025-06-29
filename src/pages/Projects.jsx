@@ -80,6 +80,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
+import Zerodha from '../assets/zerodha-photo.png';
+import GOGULF from '../assets/GOGULF.png';
 
 const projects = [
   {
@@ -88,7 +90,7 @@ const projects = [
     tech: ["React", "Firebase", "Chart.js", "WebSocket"],
     github: "https://github.com/yourlink",
     live: "https://yourliveurl.com",
-    image: "./src/assets/zerodha-photo.png",
+    image: Zerodha,
     category: "Full-Stack",
     status: "Completed"
   },
@@ -98,7 +100,7 @@ const projects = [
     tech: ["React", "CSS", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/yourlink2",
     live: "https://dubai-website-seven.vercel.app/",
-    image: "./src/assets/GOGULF.png",
+    image: GOGULF,
     category: "Frontend",
     status: "Live"
   },
@@ -108,7 +110,7 @@ const projects = [
     tech: ["React", "Node.js", "Clerk", "MongoDB", "Filecoin"],
     github: "https://github.com/yourlink2",
     live: "https://yourliveurl2.com",
-    image: "./src/assets/zerodha-photo.png",
+    image:Zerodha,
     category: "Blockchain",
     status: "In Progress"
   },
