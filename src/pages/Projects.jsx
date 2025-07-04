@@ -89,7 +89,7 @@ const projects = [
     description: "A comprehensive stock trading platform featuring real-time market data, advanced charting, portfolio management, and seamless trading experiences.",
     tech: ["React", "Firebase", "Chart.js", "WebSocket"],
     github: "https://github.com/yourlink",
-    live: "https://yourliveurl.com",
+    live: "https://zerodha-frontend-gbml.onrender.com/",
     image: Zerodha,
     category: "Full-Stack",
     status: "Completed"
