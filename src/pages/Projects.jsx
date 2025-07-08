@@ -82,6 +82,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
 import Zerodha from '../assets/zerodha-photo.png';
 import GOGULF from '../assets/GOGULF.png';
+import WenderLust from '../assets/Wenderlust.png';
 
 const projects = [
   {
@@ -105,12 +106,12 @@ const projects = [
     status: "Live"
   },
   {
-    title: "Decentralized File Storage",
-    description: "A secure web application leveraging blockchain technology that enables users to upload, download, and store files using Filecoin's decentralized network.",
-    tech: ["React", "Node.js", "Clerk", "MongoDB", "Filecoin"],
+    title: "WenderLust - Airbnb Clone",
+    description: "WanderLust is a full-stack Airbnb clone built with Node.js where users can sign up, log in, add listings, view others' listings, leave reviews, and rate properties. It also features an interactive map powered by Mapbox for location display.",
+    tech: [ "Node.js", "Passport", "MongoDB", "Express.js"],
     github: "https://github.com/yourlink2",
-    live: "https://yourliveurl2.com",
-    image:Zerodha,
+    live: "https://wanderlust-7i0b.onrender.com",
+    image:WenderLust,
     category: "Blockchain",
     status: "In Progress"
   },
