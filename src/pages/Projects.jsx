@@ -110,7 +110,7 @@ const projects = [
     description: "WanderLust is a full-stack Airbnb clone built with Node.js where users can sign up, log in, add listings, view others' listings, leave reviews, and rate properties. It also features an interactive map powered by Mapbox for location display.",
     tech: [ "Node.js", "Passport", "MongoDB", "Express.js"],
     github: "https://github.com/yourlink2",
-    live: "https://wanderlust-7i0b.onrender.com",
+    live: "https://wanderlust-7i0b.onrender.com/listings",
     image:WenderLust,
     category: "Full-Stack",
     status: "Completed"
