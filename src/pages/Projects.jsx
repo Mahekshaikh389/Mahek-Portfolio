@@ -82,7 +82,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
 import Zerodha from '../assets/zerodha-photo.png';
 import GOGULF from '../assets/GOGULF.png';
-import WenderLust from '../assets/Wenderlust.png';
+import WenderLust from '../assets/WenderLust.png';
 
 const projects = [
   {
@@ -112,8 +112,8 @@ const projects = [
     github: "https://github.com/yourlink2",
     live: "https://wanderlust-7i0b.onrender.com",
     image:WenderLust,
-    category: "Blockchain",
-    status: "In Progress"
+    category: "Full-Stack",
+    status: "Completed"
   },
 ];
 
