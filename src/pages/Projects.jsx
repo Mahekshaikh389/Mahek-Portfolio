@@ -1,88 +1,10 @@
-// const projects = [
-//   {
-//     title: "FullStack Stock Marketing App",
-//     description: "A stock trading platform with live market data.",
-//     tech: ["React", "Firebase"],
-//     github: "https://github.com/yourlink",
-//     live: "https://yourliveurl.com",
-//   },
-
-//    {
-//     title: "Website for a go gulf company",
-//     description: "A consurtancy website to set sup thir bussiness in dubai.",
-//     tech: ["React", "Css", "Tailwind CSS", ],
-//     github: "https://github.com/yourlink2",
-//     live: "https://dubai-website-seven.vercel.app/",
-//   },
-//    {
-//     title: "Decentralized File Storage",
-//     description: "A web app that lets users upload, download, and store files securely using Filecoin.",
-//     tech: ["React", "Node.js", "Clerk", "MongoDB", "Filecoin"],
-//     github: "https://github.com/yourlink2",
-//     live: "https://yourliveurl2.com",
-//   },
-  
-// ];
-
-// export default function Projects() {
-//   return (
-//     <div  id="projects" className="p-8 ">
-//        <h2 className="text-5xl font-bold mb-4 text-center">A small selection of <span className="text-[#9c79e8]">recent projects</span></h2>
-//        <div className=" flex flex-wrap justify-center gap-10">
-//           {projects.map((proj) => (
-//         <div key={proj.title} className="h-100 w-100 mb-4 border-black bg-linear-45 from [#14101c]  to-[#130929] p-4 rounded-[20px]  ">
-//           <img src="./src/assets/zerodha-photo.png" className="h-55 mb-5 rounded-[20px]"></img>
-//           <h3 className="text-xl font-semibold">{proj.title}</h3>
-//           <p>{proj.description}</p>
-//           <p className="mb-2 mt-5">Tech: {proj.tech.join(", ")}</p>
-//           <a href={proj.github} target="_blank">GitHub</a> | <a href={proj.live} target="_blank">Live</a>
-//         </div>
-
-        
-        
-//        ))}
-//        </div>
-       
-
-
-//     </div>
-
-
-
- 
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
 import Zerodha from '../assets/zerodha-photo.png';
 import GOGULF from '../assets/GOGULF.png';
 import WenderLust from '../assets/WenderLust.png';
+import Whiteboard from '../assets/Whiteboard.png'
 
 const projects = [
   {
@@ -113,12 +35,22 @@ const projects = [
     live: "https://wanderlust-7i0b.onrender.com/listings",
     image:WenderLust,
     category: "Full-Stack",
-    status: "Completed"
+    status: "Live"
+  },
+   {
+    title: "Collabrative Whiteboard ",
+    description: "A collaborative whiteboard app with real-time drawing and multi-user interaction using Socket.IO and Canvas.",
+    tech: ["React", "Node.js", "Canva", "Socket Io","MongoDB"],
+    github: "https://github.com/yourlink2",
+    live: "https://whiteboard-ooyk.onrender.com/",
+    image: Whiteboard,
+    category: "Full-Stack",
+    status: "Live"
   },
 ];
 
 export default function Projects() {
-  const [visibleProjects, setVisibleProjects] = useState([]);
+  const [visibleProjects, setVisibleProjects] = useState(projects.map((_, i) => i));
   const [hoveredProject, setHoveredProject] = useState(null);
   const sectionRef = useRef(null);
 
