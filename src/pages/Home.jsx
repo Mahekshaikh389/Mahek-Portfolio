@@ -306,7 +306,7 @@ export default function Home() {
                 </div>
 
                 <div className="p-[2px] rounded-xl animated-border">
-                  <a href="/Mahek_Resume.docx.pdf" download>
+                  <a href="/Mahek_Resume.pdf" download>
                     <button className="btn-glow px-8 py-4 text-white w-full sm:w-48 rounded-xl font-semibold flex items-center justify-center gap-2 relative z-10">
                       <FaDownload className="text-sm" />
                       Download CV
