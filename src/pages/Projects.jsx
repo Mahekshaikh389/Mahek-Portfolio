@@ -1,56 +1,74 @@
 
 import { useState, useEffect, useRef } from "react";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaRocket } from "react-icons/fa";
-import Zerodha from '../assets/zerodha-photo.png';
-import GOGULF from '../assets/GOGULF.png';
-import WenderLust from '../assets/WenderLust.png';
-import Whiteboard from '../assets/Whiteboard.png'
-
+import Zerodha from "../assets/zerodha-photo.png";
+import GOGULF from "../assets/GOGULF.png";
+import Whiteboard from "../assets/Whiteboard.png";
+import WenderLust from "../assets/WenderLust.png";
+import Imagify from "../assets/Imagify.png";
 const projects = [
   {
     title: "FullStack Stock Marketing App",
-    description: "A comprehensive stock trading platform featuring real-time market data, advanced charting, portfolio management, and seamless trading experiences.",
+    description:
+      "A comprehensive stock trading platform featuring real-time market data, advanced charting, portfolio management, and seamless trading experiences.",
     tech: ["React", "Firebase", "Chart.js", "WebSocket"],
     github: "https://github.com/yourlink",
-    live: "https://zerodha-frontend-gbml.onrender.com/",
+    live: "https://yourliveurl.com",
     image: Zerodha,
     category: "Full-Stack",
-    status: "Completed"
+    status: "Completed",
   },
   {
     title: "Dubai Business Consultancy Website",
-    description: "A professional consultancy website designed to help businesses establish their presence in Dubai with modern UI/UX and responsive design.",
+    description:
+      "A professional consultancy website designed to help businesses establish their presence in Dubai with modern UI/UX and responsive design.",
     tech: ["React", "CSS", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/yourlink2",
     live: "https://dubai-website-seven.vercel.app/",
     image: GOGULF,
     category: "Frontend",
-    status: "Live"
+    status: "Live",
   },
   {
-    title: "WenderLust - Airbnb Clone",
-    description: "WanderLust is a full-stack Airbnb clone built with Node.js where users can sign up, log in, add listings, view others' listings, leave reviews, and rate properties. It also features an interactive map powered by Mapbox for location display.",
-    tech: [ "Node.js", "Passport", "MongoDB", "Express.js"],
+    title: "Decentralized File Storage",
+    description:
+      "A secure web application leveraging blockchain technology that enables users to upload, download, and store files using Filecoin's decentralized network.",
+    tech: ["React", "Node.js", "Clerk", "MongoDB", "Filecoin"],
     github: "https://github.com/yourlink2",
-    live: "https://wanderlust-7i0b.onrender.com/listings",
-    image:WenderLust,
-    category: "Full-Stack",
-    status: "Live"
+    live: "https://yourliveurl2.com",
+    image: WenderLust,
+    category: "Blockchain",
+    status: "In Progress",
   },
-   {
+  {
     title: "Collabrative Whiteboard ",
-    description: "A collaborative whiteboard app with real-time drawing and multi-user interaction using Socket.IO and Canvas.",
-    tech: ["React", "Node.js", "Canva", "Socket Io","MongoDB"],
+    description:
+      "A collaborative whiteboard app with real-time drawing and multi-user interaction using Socket.IO and Canvas.",
+    tech: ["React", "Node.js", "Canva", "Socket Io", "MongoDB"],
     github: "https://github.com/yourlink2",
     live: "https://whiteboard-ooyk.onrender.com/",
     image: Whiteboard,
     category: "Full-Stack",
-    status: "Live"
+    status: "In Progress",
+  },
+
+  {
+    title: "AI-Powered Text-to-Image Generator",
+    description:
+      "Full-stack AI SaaS web application that converts text prompts into images using the ClipDrop AI API.",
+    tech: ["React", "Node.js", "ClipDrop", "Tailwind", "MongoDB"],
+    github: "https://github.com/yourlink2",
+    live: "https://imagify-y26d.onrender.com/",
+    image: Imagify,
+    category: "Full-Stack",
+    status: "In Progress",
   },
 ];
 
 export default function Projects() {
-  const [visibleProjects, setVisibleProjects] = useState(projects.map((_, i) => i));
+  const [visibleProjects, setVisibleProjects] = useState(
+    projects.map((_, i) => i)
+  );
   const [hoveredProject, setHoveredProject] = useState(null);
   const sectionRef = useRef(null);
 
@@ -61,7 +79,7 @@ export default function Projects() {
           if (entry.isIntersecting) {
             projects.forEach((_, index) => {
               setTimeout(() => {
-                setVisibleProjects(prev => [...new Set([...prev, index])]);
+                setVisibleProjects((prev) => [...new Set([...prev, index])]);
               }, index * 200);
             });
           }
@@ -79,8 +97,9 @@ export default function Projects() {
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
           .project-card {
             backdrop-filter: blur(16px);
             background: linear-gradient(135deg, rgba(20, 16, 28, 0.7), rgba(19, 9, 41, 0.8));
@@ -100,6 +119,37 @@ export default function Projects() {
             background: linear-gradient(90deg, transparent, rgba(156, 121, 232, 0.1), transparent);
             transition: left 0.8s ease;
           }
+
+
+          .project-image {
+             position: relative;
+             overflow: hidden;
+          }
+
+          .project-image img {
+            transition: transform 0.6s ease;
+          }
+
+          .project-image:hover img {
+            transform: scale(1.1);
+          }
+
+         /* Shine effect */
+         .project-image::before {
+           content: "";
+           position: absolute;
+           top: -100%;
+           left: -50%;
+           width: 200%;
+           height: 200%;
+           background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+           transform: rotate(25deg);
+           transition: all 0.8s ease;
+         }
+
+         .project-card:hover .project-image::before {
+           top: 100%;
+         }
 
           .project-card:hover::before {
             left: 100%;
@@ -255,14 +305,22 @@ export default function Projects() {
             33% { transform: translateY(-30px) rotate(2deg); }
             66% { transform: translateY(-15px) rotate(-2deg); }
           }
-        `
-      }} />
-      
-      <section id="projects" className="py-20 px-6 relative overflow-hidden" ref={sectionRef}>
+        `,
+        }}
+      />
+
+      <section
+        id="projects"
+        className="py-20 px-6 relative overflow-hidden"
+        ref={sectionRef}
+      >
         {/* Floating background elements */}
         <div className="floating-bg top-20 left-10 w-40 h-40 bg-[#9c79e8] rounded-full blur-3xl"></div>
-        <div className="floating-bg bottom-32 right-20 w-56 h-56 bg-[#d1c2f2] rounded-full blur-3xl" style={{animationDelay: '4s'}}></div>
-        
+        <div
+          className="floating-bg bottom-32 right-20 w-56 h-56 bg-[#d1c2f2] rounded-full blur-3xl"
+          style={{ animationDelay: "4s" }}
+        ></div>
+
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -271,7 +329,7 @@ export default function Projects() {
               <span className="highlight-text">recent projects</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Showcasing innovative solutions built with modern technologies, 
+              Showcasing innovative solutions built with modern technologies,
               from full-stack applications to blockchain-powered platforms.
             </p>
           </div>
@@ -282,29 +340,36 @@ export default function Projects() {
               <div
                 key={project.title}
                 className={`project-card relative rounded-2xl p-6 group ${
-                  visibleProjects.includes(index) ? 'animate-in' : 'animate-out'
+                  visibleProjects.includes(index) ? "animate-in" : "animate-out"
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
                 onMouseEnter={() => setHoveredProject(index)}
                 onMouseLeave={() => setHoveredProject(null)}
               >
                 {/* Status Badge */}
-                <div className={`status-badge ${
-                  project.status === 'Completed' ? 'status-completed' :
-                  project.status === 'Live' ? 'status-live' : 'status-progress'
-                }`}>
+                <div
+                  className={`status-badge ${
+                    project.status === "Completed"
+                      ? "status-completed"
+                      : project.status === "Live"
+                      ? "status-live"
+                      : "status-progress"
+                  }`}
+                >
                   {project.status}
                 </div>
 
                 {/* Project Image */}
                 <div className="project-image relative mb-6 rounded-xl overflow-hidden">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover"
                   />
                   <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs font-medium text-[#d1c2f2]">{project.category}</span>
+                    <span className="text-xs font-medium text-[#d1c2f2]">
+                      {project.category}
+                    </span>
                   </div>
                 </div>
 
@@ -313,7 +378,7 @@ export default function Projects() {
                   <h3 className="text-xl font-bold text-white group-hover:text-[#d1c2f2] transition-colors duration-300">
                     {project.title}
                   </h3>
-                  
+
                   <p className="text-gray-300 text-sm leading-relaxed">
                     {project.description}
                   </p>
@@ -321,7 +386,10 @@ export default function Projects() {
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
-                      <span key={tech} className="tech-tag px-3 py-1 text-xs font-medium text-[#d1c2f2] rounded-full">
+                      <span
+                        key={tech}
+                        className="tech-tag px-3 py-1 text-xs font-medium text-[#d1c2f2] rounded-full"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -329,19 +397,19 @@ export default function Projects() {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
+                    <a
+                      href={project.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="action-btn flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-white font-medium relative z-10"
                     >
                       <FaGithub className="text-sm" />
                       Code
                     </a>
-                    
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
+
+                    <a
+                      href={project.live}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="action-btn flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-white font-medium relative z-10"
                     >
@@ -361,7 +429,9 @@ export default function Projects() {
           <div className="text-center mt-16">
             <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#9c79e8]/20 to-[#d1c2f2]/20 backdrop-blur-sm border border-[#9c79e8]/30 rounded-full hover:border-[#9c79e8]/50 transition-all duration-300 group cursor-pointer">
               <FaRocket className="text-[#d1c2f2] group-hover:animate-bounce" />
-              <span className="text-white font-medium">More projects coming soon!</span>
+              <span className="text-white font-medium">
+                More projects coming soon!
+              </span>
             </div>
           </div>
         </div>
