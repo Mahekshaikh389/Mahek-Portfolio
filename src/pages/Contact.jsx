@@ -59,7 +59,7 @@ export default function Contact() {
     {
       icon: FaGithub,
       label: "GitHub",
-      href: "https://github.com/yourusername",
+      href: "https://github.com/Mahekshaikh389",
       color: "#333"
     }
   ];
