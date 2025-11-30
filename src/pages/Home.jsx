@@ -317,7 +317,7 @@ export default function Home() {
 
               {/* Social Links */}
               <div className="flex gap-4 mb-8 justify-center lg:justify-start">
-                <a href="#" className="social-icon p-3 rounded-full hover:text-[#d1c2f2] transition-colors">
+                <a href="https://github.com/Mahekshaikh389" className="social-icon p-3 rounded-full hover:text-[#d1c2f2] transition-colors">
                   <FaGithub className="text-xl" />
                 </a>
                 <a href="https://www.linkedin.com/in/mahek-shaikh-3b628a1bb?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BuNGA81khS5qP71GIx2KcGQ%3D%3D" className="social-icon p-3 rounded-full hover:text-[#d1c2f2] transition-colors">
